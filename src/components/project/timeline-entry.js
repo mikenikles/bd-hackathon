@@ -8,7 +8,11 @@ const TimelineEntry = ({
 }) => {
   return (
     <div>
-      Hello
+      <p>
+        {timestamp}<br />
+        {content}
+      </p>
+      <p><strong>Tags:</strong> {tags.join(', ')}</p>
     </div>
   )
 }

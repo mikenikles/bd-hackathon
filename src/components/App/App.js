@@ -51,13 +51,6 @@ class App extends Component {
         <Link to="/login">Login</Link>
         <Link to="/project">Project</Link>
         <Link to="/project-list">Project-list</Link>
-        <br />
-        <button onClick={this.onAddData}>Add Project</button>
-        {
-          this.state.projects.map((project) => {
-            return <span key={project.id}>{project}</span>
-          })
-        }
       </div>
     );
   }

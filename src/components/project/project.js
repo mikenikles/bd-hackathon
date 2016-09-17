@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getRebase from '../../utils/rebase'
 import './project.scss';
 import TimelineEntry from './timeline-entry'
 import '../../index.scss';
@@ -6,7 +7,29 @@ import '../../index.scss';
 import { Link } from 'react-router'
 
 class Project extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      projects: []
+    }
+  }
+
+  componentDidMount(){
+    getRebase().syncState(`projects`, {
+      context: this,
+      state: 'projects',
+      asArray: true
+    })
+  }
+
   render() {
+    if (this.state.projects.length === 0) {
+      return false
+    }
+
+    const project = this.state.projects[this.props.location.query.id]
+
     const timelineEntries = [{
       timestamp: 'September 17, 2016',
       content: 'Project started',
@@ -21,7 +44,11 @@ class Project extends Component {
       <div className="project">
         <section className="c-steps">
             <Link to="/">Home</Link>
-            <h1>title</h1>
+
+            <p className="App-intro">
+              This is the Project {"#" + this.props.location.query.id} page.
+            </p>
+            <h1>{project.name}</h1>
             <p>Intent paragraph</p>
             <div className="c-attribute">
                 <div>
@@ -61,14 +88,15 @@ class Project extends Component {
             <input type="checkbox" id="tasks" value="tasks"></input> <label for="cbox2">Tasks</label>
             <hr></hr>
         </section>
+        <Link to="/project/add-timeline-entry">Log Work</Link>
 
         <section className="c-timeline">
             <div>
-              {
-                timelineEntries.map((timelineEntry) => {
-                  return <TimelineEntry {...timelineEntry}/>
-                })
-              }
+                {
+                  timelineEntries.map((timelineEntry, idx) => {
+                    return <TimelineEntry key={idx} {...timelineEntry}/>
+                  })
+                }
             </div>
         </section>
       </div>
