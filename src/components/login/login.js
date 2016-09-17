@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './login.scss';
+import '../../index.scss';
 
 import { Link } from 'react-router'
 
