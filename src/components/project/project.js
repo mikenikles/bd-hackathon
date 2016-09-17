@@ -45,6 +45,7 @@ class Project extends Component {
           This is the Project {"#" + this.props.location.query.id} page.
         </p>
         <p>{project.name}</p>
+        <Link to="/project/add-timeline-entry">Log Work</Link>
         <p>
           {
             timelineEntries.map((timelineEntry, idx) => {
