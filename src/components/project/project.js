@@ -35,6 +35,9 @@ class Project extends Component {
                 <span>Budget</span>
             </div>
         </div>
+        <h2>1. Research &amp; Ideation</h2>
+        <p>paragraph text</p>
+        
 
 
 
