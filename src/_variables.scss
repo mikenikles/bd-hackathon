@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/LatoLatin-Regular.eot');
+    src: url('./assets/fonts/LatoLatin-Regular.eot#iefix') format('eot'),
+         url('./assets/fonts/LatoLatin-Regular.woff') format('woff'),
+         url('./assets/fonts/LatoLatin-Regular.woff2') format('woff2'),
+         url('./assets/fonts/LatoLatin-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/LatoLatin-Bold.eot');
+    font-weight: bold;
+    font-style: normal;
+}
