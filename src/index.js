@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Router, Route, browserHistory } from 'react-router'
+import App from './components/App/App';
+import About from './components/About/About';
 import './index.scss';
 
 ReactDOM.render(
-  <App />,
+  <Router history={browserHistory}>
+    <Route path="/" component={App}/>
+    <Route path="/about" component={About}/>
+  </Router>,
   document.getElementById('root')
 );
