@@ -41,12 +41,16 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h1>Welcome to React</h1>
+          <p>This is text</p>
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Link to="/about">About</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/project">Project</Link>
+        <Link to="/project-list">Project-list</Link>
         <br />
         <button onClick={this.onAddData}>Add Project</button>
         {
