@@ -1,11 +1,10 @@
 import {
     loadProduct,
-} from '../utils/bdapis'
+} from './bdapis'
 
-it('load a product', () => {
+it('load a product', async () => {
   // make request
-  var product = loadProduct('10082137');
-
+  const product = await loadProduct('10082137');
   expect(product).not.toBeNull();
-  expect(product).toBe(true);
-});
+  expect(product.success).toBeTruthy();
+})
