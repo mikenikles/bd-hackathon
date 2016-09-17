@@ -4,7 +4,8 @@
     src: url('./assets/fonts/LatoLatin-Regular.eot#iefix') format('eot'),
          url('./assets/fonts/LatoLatin-Regular.woff') format('woff'),
          url('./assets/fonts/LatoLatin-Regular.woff2') format('woff2'),
-         url('./assets/fonts/LatoLatin-Regular.ttf') format('truetype');
+         url('./assets/fonts/LatoLatin-Regular.ttf') format('truetype'),url(),
+         url('./assets/fonts/LatoLatin-Regular.svg#lato') format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -12,6 +13,11 @@
 @font-face {
     font-family: 'Lato';
     src: url('./assets/fonts/LatoLatin-Bold.eot');
+    src: url('./assets/fonts/LatoLatin-Bold.eot#iefix') format('eot'),
+         url('./assets/fonts/LatoLatin-Bold.woff') format('woff'),
+         url('./assets/fonts/LatoLatin-Bold.woff2') format('woff2'),
+         url('./assets/fonts/LatoLatin-Bold.ttf') format('truetype'),url(),
+         url('./assets/fonts/LatoLatin-Bold.svg#lato') format("svg");
     font-weight: bold;
     font-style: normal;
 }
