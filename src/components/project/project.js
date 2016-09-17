@@ -17,10 +17,27 @@ class Project extends Component {
     }]
 
     return (
-      <div className="Project">
-        <p className="App-intro">
-          This is the Project page.
-        </p>
+      <div className="t-project">
+        <Link to="/">Home</Link>
+        <h1>title</h1>
+        <p>Intent paragraph</p>
+        <div class="c-attribute">
+            <div>
+                <div class="c-attribute__item"></div>
+                <span>Skill Level</span>
+            </div>
+            <div>
+                <div class="c-attribute__item"></div>
+                <span>Time</span>
+            </div>
+            <div>
+                <div class="c-attribute__item"></div>
+                <span>Budget</span>
+            </div>
+        </div>
+
+
+
         <p>
           {
             timelineEntries.map((timelineEntry) => {
@@ -28,7 +45,6 @@ class Project extends Component {
             })
           }
         </p>
-        <Link to="/">Home</Link>
       </div>
     );
   }
