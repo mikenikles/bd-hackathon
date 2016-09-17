@@ -64,7 +64,7 @@ class Project extends Component {
                     <span>Budget</span>
                 </div>
                 <button className="c-button c--primary c--full-width">Lutton</button>
-                <input type="range"></input>
+                <input className="c-range" type="range"></input>
             </div>
         </section>
         <section className="c-steps">
