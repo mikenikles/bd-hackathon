@@ -52,7 +52,7 @@ class ProjectSetup extends Component {
 
   render() {
     return (
-      <div className="ProjectList">
+      <div className="ProjectList u-padding-sides-lg">
         <h1>Project Setup</h1>
         <p>Welcome to your project timeline NAME. To get you started we need a little info to get you setup.</p>
         <form onSubmit={this.onAddData}>
