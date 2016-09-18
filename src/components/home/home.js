@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 const Home = (props) => {
   return (
     <div>
+    <h1>Project Timeline Dashboard</h1>
         <span>Add a new project to track your:</span>
         <ul className="c-list c--bullets">
             <li>Research &amp; Ideation</li>
