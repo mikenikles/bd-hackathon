@@ -8,7 +8,7 @@ const TimelineEntry = ({
   media
 }) => {
   return (
-    <div>
+    <div className="c-timeline__entry">
       <p>
         {moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')}<br />
         {content}
