@@ -43,7 +43,8 @@ class ProjectSetup extends Component {
       projects.push({
         id: Math.random(),
         name: this.state.newProjectName,
-        description: this.state.newProjectDescription
+        description: this.state.newProjectDescription,
+        completed: false
       })
       this.setState({
         projects: projects

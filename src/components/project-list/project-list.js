@@ -4,6 +4,10 @@ import './project-list.scss';
 
 import { Link } from 'react-router'
 
+const renderStatus = (status) => {
+  return status ? 'Finished!' : 'In Progress'
+}
+
 class ProjectList extends Component {
   constructor(props) {
     super(props)
@@ -34,6 +38,7 @@ class ProjectList extends Component {
                     <Link to={ "/projects/" + idx}>
                     <div className="delete-later u-margin-bottom-lg"></div>
                     <span className="c-project-tile__title">{project.name}</span>
+                    <span className="c-project-tile__status">{ renderStatus(project.completed) }</span>
                     <p className="c-project-tile__description">{project.description}</p>
                     </Link>
                 </article>
