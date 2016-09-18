@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import getRebase from '../../utils/rebase'
 import './project.scss';
 import TimelineEntry from './timeline-entry'
+import ProductBox from '../product-box/product-box'
 import '../../index.scss';
 
 import { Link } from 'react-router'
@@ -73,6 +74,7 @@ class Project extends Component {
             <p>paragraph text</p>
             <h4>What I need</h4>
             <label for="cbox1">Products</label>
+            <ProductBox />
             <ul>
               {
                 Object.keys(products).map(function (key) {

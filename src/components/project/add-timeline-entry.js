@@ -25,7 +25,6 @@ class AddTimelineEntry extends React.Component {
   }
 
   addAudioEntry(content) {
-    console.log(content)
     const projects = this.state.projects
     const project = projects[this.props.params.id]
     if (!project.timeline) {
@@ -42,6 +41,11 @@ class AddTimelineEntry extends React.Component {
 
   addPictureEntry(picture) {
     console.log('addPictureEntry', picture)
+    const storageRef = getRebase().storage().ref()
+    const pictureRef = storageRef.child(`projects/${this.props.params.id}/${picture.name}`)
+    pictureRef.put(picture).then((snapshot) => {
+      console.log('Uploaded an image.', snapshot)
+    })
   }
 
   render () {
@@ -53,7 +57,7 @@ class AddTimelineEntry extends React.Component {
       <div>
         Log work here
         <AddAudioEntry onAddEntry={this.addAudioEntry}/>
-        <AddPictureEntry onPictureEntry={this.addPictureEntry}/>
+        <AddPictureEntry onAddEntry={this.addPictureEntry}/>
       </div>
     )
   }
