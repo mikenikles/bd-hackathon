@@ -7,6 +7,7 @@ const Home = (props) => {
       <Link to="/about">About</Link>
       <Link to="/login">Login</Link>
       <Link to="/projects">Project-list</Link>
+      <Link to="/project-setup">Project-setup</Link>
     </div>
   )
 }
