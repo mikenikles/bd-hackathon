@@ -32,7 +32,7 @@ class Project extends Component {
     const project = this.state.projects[this.props.params.id]
 
     const timelineEntries = project.timeline || []
-    const products = project.products || {}
+    const products = project.products || ['10082137','10079777']; // TODO replace dummy default data
 
     return (
       <div className="project">
@@ -76,21 +76,7 @@ class Project extends Component {
             <p>paragraph text</p>
             <h4>What I need</h4>
             <label for="cbox1">Products</label>
-            <ProductBox />
-            <ul>
-              {
-                Object.keys(products).map(function (key) {
-                  let product = project.products[key]
-                  return <li key={key}>
-                    <a href={product.url}>
-                      <img src={product.image} />
-                      <p>{product.title}</p>
-                      <p>${product.price} / {product.priceUnit}</p>
-                    </a>
-                  </li>
-                })
-              }
-            </ul>
+            <ProductBox ids={products}/>
             <Link to={`${this.props.params.id}/search`}>Add Products</Link>
             <input type="checkbox" id="tasks" value="tasks"></input> <label for="cbox2">Tasks</label>
             <hr></hr>
