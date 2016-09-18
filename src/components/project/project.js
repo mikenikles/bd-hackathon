@@ -37,8 +37,6 @@ class Project extends Component {
       <div className="project">
         <section className="c-steps u-padding-sides-lg">
             <h1>{project.name}</h1>
-            <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
-
             <p>{project.description}</p>
             <div className="c-attribute">
                 <div>
