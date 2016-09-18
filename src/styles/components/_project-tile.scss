@@ -1,6 +1,10 @@
 // Project tile
 
 .c-project-tile__description {
+    margin-top: $unit*2;
+    margin-bottom: $unit*6;
+}
+
+.c-project-tile__status {
     color: $brand-orange;
-    margin-top: $unit;
 }

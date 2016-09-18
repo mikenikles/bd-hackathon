@@ -51,7 +51,8 @@ class ProjectSetup extends Component {
         id: Math.random(),
         name: this.state.newProjectName,
         description: this.state.newProjectDescription,
-        timeline: []
+        timeline: [],
+        completed: false
       }
       // Initialize timeline entry
       const timelineEntry = {

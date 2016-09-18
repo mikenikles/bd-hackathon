@@ -29,7 +29,7 @@ input[type=range]::-ms-track {
 
 input[type=range]::-webkit-slider-thumb {
     content: '';
-    background-image: url('./assets/icons/slider.svg');
+    background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30"><style type="text/css">  .st0{fill:#F9AE33;}</style><title>  Slider</title><path class="st0" d="M11.6 29.5c6.4 0 11.6-5.2 11.6-11.6s-7.3-13-11.6-17.4C7.2 4.8 0 11.5 0 17.9S5.2 29.5 11.6 29.5z"/></svg>');
     background-size: contain;
     background-repeat: no-repeat;
     width: 24px;
@@ -39,6 +39,8 @@ input[type=range]::-webkit-slider-thumb {
     outline: none;
     border: none;
     box-shadow: none;
+    background-color: transparent;
+    fill: $brand-orange;
 
 }
 

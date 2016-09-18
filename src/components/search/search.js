@@ -87,25 +87,35 @@ class Search extends React.Component {
     }
 
     return (
-      <div>
-        <Link to={`/projects/${this.props.params.id}`}>Done</Link>
-        <form onSubmit={this.onSearchSubmit}>
-          <label>Search</label>
-          <input placeholder="Search Term" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
-        </form>
-        <div id="searchResults">
-          <ul>
-          {
-            this.state.searchProducts.map((product, idx) => {
-              return <li key={idx}>
-                <img src={product.image} />
-                <p>{product.title}</p>
-                <p>${product.price} / {product.priceUnit}</p>
-                <button className={product.added} onClick={this.saveProduct.bind(this, product)}>Add to List</button>
-              </li>
-            })
-          }
-          </ul>
+      <div className="pinny">
+        <div className="pinny__wrapper">
+          <div className="pinny__header">
+            <h2>Search Results</h2>
+            <Link to={`/projects/${this.props.params.id}`}>Close</Link>
+          </div>
+          <div className="pinny__content">
+            <form onSubmit={this.onSearchSubmit}>
+              <label>Search</label>
+              <input placeholder="Search Term" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
+            </form>
+            <div id="searchResults">
+              <ul>
+              {
+                this.state.searchProducts.map((product, idx) => {
+                  return <li key={idx}>
+                    <img src={product.image} />
+                    <p>{product.title}</p>
+                    <p>${product.price} / {product.priceUnit}</p>
+                    <button className={product.added} onClick={this.saveProduct.bind(this, product)}>Add to List</button>
+                  </li>
+                })
+              }
+              </ul>
+            </div>
+          </div>
+          <div className="pinny__footer">
+            <Link to={`/projects/${this.props.params.id}`}>Done</Link>
+          </div>
         </div>
       </div>
     )
