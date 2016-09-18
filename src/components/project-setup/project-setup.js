@@ -3,8 +3,6 @@ import getRebase from '../../utils/rebase'
 import './project-setup.scss';
 import '../../index.scss';
 
-import { Link } from 'react-router'
-
 class ProjectSetup extends Component {
     constructor(props) {
       super(props)

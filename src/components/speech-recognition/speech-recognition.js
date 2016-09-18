@@ -55,7 +55,6 @@ export default class App extends Component {
         this.recognition.start();
       } else {
         this.recognition.stop();
-        const question = this.state.inputValue;
       }
       this.setState({
         speaking: !this.state.speaking,
@@ -71,6 +70,7 @@ export default class App extends Component {
           this.state.supportVoice &&
           <img
             src={this.state.speaking ? micAnimate : mic}
+            alt=""
             className="micImg"
             onClick={this.say.bind(this)} />
         }

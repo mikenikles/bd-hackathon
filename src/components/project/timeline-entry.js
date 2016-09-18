@@ -14,7 +14,7 @@ const TimelineEntry = ({
         {content}
         {
           media && media.map((entry, idx) => {
-            return <img key={idx} src={entry.src} />
+            return <img key={idx} src={entry.src} alt=""/>
           })
         }
       </p>

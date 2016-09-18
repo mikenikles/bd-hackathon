@@ -4,13 +4,13 @@ import AddAudioEntry from './add-audio-entry'
 import AddPictureEntry from './add-picture-entry'
 
 import audio from '../../assets/icons/audio.svg';
-import audioactive from '../../assets/icons/audio-active.svg';
+import audioactive from '../../assets/icons/audio-active.svg'; // eslint-disable-line
 import camera from '../../assets/icons/camera.svg';
-import cameraactive from '../../assets/icons/camera-active.svg';
+import cameraactive from '../../assets/icons/camera-active.svg'; // eslint-disable-line
 import question from '../../assets/icons/question.svg';
-import questionactive from '../../assets/icons/question-active.svg';
+import questionactive from '../../assets/icons/question-active.svg'; // eslint-disable-line
 import video from '../../assets/icons/video.svg';
-import videoactive from '../../assets/icons/video-active.svg';
+import videoactive from '../../assets/icons/video-active.svg'; // eslint-disable-line
 
 
 class AddTimelineEntry extends React.Component {
@@ -43,18 +43,6 @@ class AddTimelineEntry extends React.Component {
     this.setState({
       audioEntry: content
     })
-    // const projects = this.state.projects
-    // const project = projects[this.props.params.id]
-    // if (!project.timeline) {
-    //   project.timeline = []
-    // }
-    // project.timeline.push({
-    //   timestamp: new Date(),
-    //   content: content
-    // })
-    // this.setState({
-    //   projects: projects
-    // })
   }
 
   onAddPictureEntry(picture) {
@@ -62,11 +50,6 @@ class AddTimelineEntry extends React.Component {
     this.setState({
       pictureEntry: picture
     })
-    // const storageRef = getRebase().storage().ref()
-    // const pictureRef = storageRef.child(`projects/${this.props.params.id}/${picture.name}`)
-    // pictureRef.put(picture).then((snapshot) => {
-    //   console.log('Uploaded an image.', snapshot)
-    // })
   }
 
   saveToTimeline() {
