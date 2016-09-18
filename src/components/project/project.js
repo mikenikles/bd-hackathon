@@ -55,8 +55,6 @@ class Project extends Component {
                     <div className="c-attribute__item"></div>
                     <span>Budget</span>
                 </div>
-                <button className="c-button c--primary c--full-width">Lutton</button>
-                <input className="c-range" type="range"></input>
             </div>
         </section>
         <section className="c-steps">
