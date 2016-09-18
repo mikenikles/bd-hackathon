@@ -91,22 +91,27 @@ class Search extends React.Component {
         <div className="pinny__wrapper">
           <div className="pinny__header">
             <h2>Search Results</h2>
-            <Link to={`/projects/${this.props.params.id}`}>Close</Link>
+            <Link className="close" to={`/projects/${this.props.params.id}`}>Close</Link>
           </div>
           <div className="pinny__content">
             <form onSubmit={this.onSearchSubmit}>
-              <label>Search</label>
-              <input placeholder="Search Term" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
+              <input className="search-input u-padding-left-xxxlg" type="text" placeholder="ie: Kitchen tiles" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
             </form>
             <div id="searchResults">
               <ul>
               {
                 this.state.searchProducts.map((product, idx) => {
-                  return <li key={idx}>
-                    <img src={product.image} alt=""/>
-                    <p>{product.title}</p>
-                    <p>${product.price} / {product.priceUnit}</p>
-                    <button className={product.added} onClick={this.saveProduct.bind(this, product)}>Add to List</button>
+                  return <li className="u-margin-bottom-xlg" key={idx}>
+                  <div className="c-product">
+                      <div className="c-product__image">
+                        <img src={product.image} alt=""/>
+                       </div>
+                        <div className="c-product__description">
+                            <p className="c-product__title">{product.title}</p>
+                            <p>${product.price} / {product.priceUnit}</p>
+                        </div>
+                    </div>
+                    <button className={product.added} className="c-button c--primary c--full-width" onClick={this.saveProduct.bind(this, product)}>Add to List</button>
                   </li>
                 })
               }
@@ -114,7 +119,7 @@ class Search extends React.Component {
             </div>
           </div>
           <div className="pinny__footer">
-            <Link to={`/projects/${this.props.params.id}`}>Done</Link>
+            <Link to={`/projects/${this.props.params.id}`} className="c-button c--primary c--full-width" >Done</Link>
           </div>
         </div>
       </div>
