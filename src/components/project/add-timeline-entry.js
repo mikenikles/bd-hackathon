@@ -3,6 +3,16 @@ import getRebase from '../../utils/rebase'
 import AddAudioEntry from './add-audio-entry'
 import AddPictureEntry from './add-picture-entry'
 
+import audio from '../../assets/icons/audio.svg';
+import audioactive from '../../assets/icons/audio-active.svg'; // eslint-disable-line
+import camera from '../../assets/icons/camera.svg';
+import cameraactive from '../../assets/icons/camera-active.svg'; // eslint-disable-line
+import question from '../../assets/icons/question.svg';
+import questionactive from '../../assets/icons/question-active.svg'; // eslint-disable-line
+import video from '../../assets/icons/video.svg';
+import videoactive from '../../assets/icons/video-active.svg'; // eslint-disable-line
+
+
 class AddTimelineEntry extends React.Component {
 
   constructor(props) {
@@ -33,18 +43,6 @@ class AddTimelineEntry extends React.Component {
     this.setState({
       audioEntry: content
     })
-    // const projects = this.state.projects
-    // const project = projects[this.props.params.id]
-    // if (!project.timeline) {
-    //   project.timeline = []
-    // }
-    // project.timeline.push({
-    //   timestamp: new Date(),
-    //   content: content
-    // })
-    // this.setState({
-    //   projects: projects
-    // })
   }
 
   onAddPictureEntry(picture) {
@@ -52,11 +50,6 @@ class AddTimelineEntry extends React.Component {
     this.setState({
       pictureEntry: picture
     })
-    // const storageRef = getRebase().storage().ref()
-    // const pictureRef = storageRef.child(`projects/${this.props.params.id}/${picture.name}`)
-    // pictureRef.put(picture).then((snapshot) => {
-    //   console.log('Uploaded an image.', snapshot)
-    // })
   }
 
   saveToTimeline() {
@@ -68,7 +61,7 @@ class AddTimelineEntry extends React.Component {
 
     // Initialize timeline entry
     const timelineEntry = {
-      timestamp: new Date(),
+      timestamp: new Date().now(),
       content: '',
       media: []
     }
@@ -93,6 +86,7 @@ class AddTimelineEntry extends React.Component {
       this.setState({
         projects: projects
       })
+      this.props.history.push('/projects/' + (projects.length - 1))
     })
   }
 
@@ -116,17 +110,20 @@ class AddTimelineEntry extends React.Component {
 
     return (
       <div>
+        <section className="u-padding-sides-lg">
         <h1>Add to timeline</h1>
         <p>Upload a picture, record your progress or ask a question here. When you're ready, tap the "Save to timeline" button.</p>
-        <ul className="timeline-entry-type">
-          <li className="audio" onClick={() => this.setState({ timelineEntryType: 'audio' })}>Audio</li>
-          <li className="video" onClick={() => this.setState({ timelineEntryType: 'video' })}>Video</li>
-          <li className="image" onClick={() => this.setState({ timelineEntryType: 'image' })}>Image</li>
-          <li className="question" onClick={() => this.setState({ timelineEntryType: 'question' })}>Question</li>
-        </ul>
-        { this.renderTimelineEntryType() }
-
-        <button onClick={this.saveToTimeline}>Save to timeline</button>
+        <div className="timeline-entry-type u-display-flex u--space-between">
+          <a className="audio" onClick={() => this.setState({ timelineEntryType: 'audio' })}><img src={audio} alt="Audio" className="c-icon c--large"></img></a>
+          <a className="video" onClick={() => this.setState({ timelineEntryType: 'video' })}><img src={video} alt="Video" className="c-icon c--large"></img></a>
+          <a className="camera" onClick={() => this.setState({ timelineEntryType: 'image' })}><img src={camera} alt="Image" className="c-icon c--large"></img></a>
+          <a className="question" onClick={() => this.setState({ timelineEntryType: 'question' })}><img src={question} alt="Question" className="c-icon c--large"></img></a>
+        </div>
+        <div className="c-steps u-padding-all-lg">
+          { this.renderTimelineEntryType() }
+        </div>
+        <button onClick={this.saveToTimeline} className="c-button c--primary c--full-width">Save to timeline</button>
+        </section>
       </div>
     )
   }

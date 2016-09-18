@@ -92,7 +92,7 @@ class Project extends Component {
                   let product = project.products[key]
                   return <li key={key}>
                     <a href={product.url}>
-                      <img src={product.image} />
+                      <img src={product.image} alt=""/>
                       <p>{product.title}</p>
                       <p>${product.price} / {product.priceUnit}</p>
                     </a>

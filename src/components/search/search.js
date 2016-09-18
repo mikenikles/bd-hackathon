@@ -16,7 +16,7 @@ class Search extends React.Component {
       savedProducts: []
     }
 
-    this.searchTimeout
+    this.searchTimeout // eslint-disable-line
 
     this.onSearchSubmit = this.onSearchSubmit.bind(this)
     this.onSearchTermChange = this.onSearchTermChange.bind(this)
@@ -56,7 +56,7 @@ class Search extends React.Component {
   }
 
   onSearchSubmit(e){
-    e && e.preventDefault()
+    e && e.preventDefault() // eslint-disable-line
 
     const self = this
 
@@ -103,7 +103,7 @@ class Search extends React.Component {
               {
                 this.state.searchProducts.map((product, idx) => {
                   return <li key={idx}>
-                    <img src={product.image} />
+                    <img src={product.image} alt=""/>
                     <p>{product.title}</p>
                     <p>${product.price} / {product.priceUnit}</p>
                     <button className={product.added} onClick={this.saveProduct.bind(this, product)}>Add to List</button>
