@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import getRebase from '../../utils/rebase'
 import './project.scss';
 import TimelineEntry from './timeline-entry'
+import ProductBox from '../product-box/product-box'
 import '../../index.scss';
 
 import { Link } from 'react-router'
@@ -31,6 +32,7 @@ class Project extends Component {
     const project = this.state.projects[this.props.params.id]
 
     const timelineEntries = project.timeline || []
+    const products = project.products || {}
 
     return (
       <div className="project">
@@ -73,7 +75,23 @@ class Project extends Component {
             <h2>Decisions</h2>
             <p>paragraph text</p>
             <h4>What I need</h4>
-            <input type="checkbox" id="products" value="products"></input> <label for="cbox1">Products</label>
+            <label for="cbox1">Products</label>
+            <ProductBox />
+            <ul>
+              {
+                Object.keys(products).map(function (key) {
+                  let product = project.products[key]
+                  return <li key={key}>
+                    <a href={product.url}>
+                      <img src={product.image} />
+                      <p>{product.title}</p>
+                      <p>${product.price} / {product.priceUnit}</p>
+                    </a>
+                  </li>
+                })
+              }
+            </ul>
+            <Link to={`${this.props.params.id}/search`}>Add Products</Link>
             <input type="checkbox" id="tasks" value="tasks"></input> <label for="cbox2">Tasks</label>
             <hr></hr>
         </section>

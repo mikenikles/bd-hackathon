@@ -8,6 +8,7 @@ import Login from './components/login/login';
 import Project from './components/project/project';
 import ProjectSetup from './components/project-setup/project-setup';
 import AddTimelineEntry from './components/project/add-timeline-entry';
+import Search from './components/search/search';
 import ProjectList from './components/project-list/project-list';
 import './index.scss';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
       <Route path="/project-setup" component={ProjectSetup}/>
       <Route path="/projects/:id" component={Project}/>
       <Route path="/projects/:id/add-timeline-entry" component={AddTimelineEntry}/>
+      <Route path="/projects/:id/search" component={Search}/>
     </Route>
   </Router>,
   document.getElementById('root')
