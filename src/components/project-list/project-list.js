@@ -64,7 +64,7 @@ class ProjectList extends Component {
         {
           this.state.projects.map((project, idx) => {
             return <li key={idx}>
-              <Link to={ "/project?id=" + idx}>{project.name} <span>{project.description}</span></Link>
+              <Link to={ "/projects/" + idx}>{project.name} <span>{project.description}</span></Link>
             </li>
           })
         }

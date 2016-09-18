@@ -28,7 +28,7 @@ class Project extends Component {
       return false
     }
 
-    const project = this.state.projects[this.props.location.query.id]
+    const project = this.state.projects[this.props.params.id]
 
     const timelineEntries = project.timeline || []
 
@@ -38,7 +38,7 @@ class Project extends Component {
             <Link to="/">Home</Link>
 
             <h1>{project.name}</h1>
-            <Link to={`/project/add-timeline-entry?id=${this.props.location.query.id}`}>Log Work</Link>
+            <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
 
             <p>{project.description}</p>
             <div className="c-attribute">
