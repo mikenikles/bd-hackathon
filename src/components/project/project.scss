@@ -1,0 +1,23 @@
+.c-attribute {
+	display: flex;
+	justify-content: space-between;
+}
+
+.c-attribute__wrapper {
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.c-attribute__item {
+	display: flex;
+    justify-content: center;
+}
+
+.c-project-title {
+	margin-bottom: 0;
+}
+
+.c-project-subtitle {
+	margin-top: 0;
+}
