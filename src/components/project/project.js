@@ -127,7 +127,6 @@ class Project extends Component {
         </section>
         <section className="c-steps u-padding-sides-lg u-margin-bottom-xxxlg">
             <h2>4. Project Complete!</h2>
-            <button className="c-button c--primary c--full-width">I&#39;M DONE</button>
             <h5>Actual Time to Complete</h5>
               <div className="u-display-flex u--space-between">
                 <label>1 &gt; Day</label><label>Weekend</label><label>Week</label><label>Month</label><label>3 Month</label><label>Year</label>
@@ -147,6 +146,7 @@ class Project extends Component {
               </span>
               </div>
          </section>
+         <button className="c-button c--primary c--full-width">I&#39;M DONE</button>
       </div>
     );
   }
