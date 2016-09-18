@@ -1,0 +1,45 @@
+// Button
+
+.c-button {
+    min-width: $tap-size;
+    min-height: $tap-size;
+    margin: 0; // 1
+    padding: $unit*3; // 12px
+
+    border-radius: 0;
+    background: none; // 1
+    border: 0;
+
+    color: inherit; // 1
+    font: inherit; // 1
+    line-height: normal; // 1
+    text-align: center;
+    text-decoration: none; // 1
+
+    transition: $slow-animation;
+
+    cursor: pointer;
+    user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    appearance: none; // 1
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+}
+
+.c-button.c--primary {
+    background: $brand-blue;
+
+    color: $white;
+
+    &:active,
+    &:focus {
+        background: $dark-blue;
+    }
+}
+
+.c-button.c--full-width {
+    width: 100%;
+    border-radius: 2px;
+}

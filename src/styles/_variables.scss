@@ -1,3 +1,6 @@
+// Variables
+// =====
+
 $unit: 4px;
 $v-space: 8px;
 
@@ -6,6 +9,9 @@ $dark-blue: #2F4B7D;
 $brand-orange: #F9AE33;
 $font-color: #444444;
 $light-grey: #87888B;
+$ui-grey: #CACACA;
+$white: #fff;
+
 
 $font-family: 'Lato';
 
@@ -21,11 +27,14 @@ $small-line-height: 20px;
 $medium-line-height: 28px;
 $large-line-height: 36px;
 
+$tap-size: 44px;
+$slow-animation: 0.25s ease-in-out all;
+
 
 //
 body {
     margin: 0;
-    padding: 0;
+    padding: $v-space;
     font-family: 'Lato', sans-serif;
     // font-weight: normal;
 }
@@ -69,17 +78,5 @@ h5 {
          url('./assets/fonts/LatoLatin-Regular.ttf') format('truetype'),url(),
          url('./assets/fonts/LatoLatin-Regular.svg#lato') format("svg");
     font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('./assets/fonts/LatoLatin-Bold.eot');
-    src: url('./assets/fonts/LatoLatin-Bold.eot#iefix') format('eot'),
-         url('./assets/fonts/LatoLatin-Bold.woff') format('woff'),
-         url('./assets/fonts/LatoLatin-Bold.woff2') format('woff2'),
-         url('./assets/fonts/LatoLatin-Bold.ttf') format('truetype'),url(),
-         url('./assets/fonts/LatoLatin-Bold.svg#lato') format("svg");
-    font-weight: bold;
     font-style: normal;
 }
