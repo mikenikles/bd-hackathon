@@ -3,6 +3,7 @@ import getRebase from '../../utils/rebase'
 import moment from 'moment'
 import AddAudioEntry from './add-audio-entry'
 import AddPictureEntry from './add-picture-entry'
+import AddQuestionEntry from './add-question-entry'
 
 import audio from '../../assets/icons/audio.svg';
 import audioactive from '../../assets/icons/audio-active.svg'; // eslint-disable-line
@@ -98,6 +99,7 @@ class AddTimelineEntry extends React.Component {
       case 'image':
         return <AddPictureEntry onAddEntry={this.onAddPictureEntry}/>
       case 'question':
+        return <AddQuestionEntry />
       case 'video':
       default:
         return false
