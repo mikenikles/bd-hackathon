@@ -37,12 +37,10 @@ class Project extends Component {
         <section className="c-steps">
             <Link to="/">Home</Link>
 
-            <p className="App-intro">
-              This is the Project {"#" + this.props.location.query.id} page.
-            </p>
             <h1>{project.name}</h1>
             <Link to={`/project/add-timeline-entry?id=${this.props.location.query.id}`}>Log Work</Link>
-            <p>Intent paragraph</p>
+
+            <p>{project.description}</p>
             <div className="c-attribute">
                 <div>
                     <div className="c-attribute__item"></div>
