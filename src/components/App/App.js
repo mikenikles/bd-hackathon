@@ -47,8 +47,6 @@ class App extends Component {
           <img src={cart} alt="Cart"></img>
           <img src={account} alt="Account"></img>
       </div>
-          <h1>Welcome to React</h1>
-          <p>This is tet</p>
         { this.props.children }
       </div>
     );
