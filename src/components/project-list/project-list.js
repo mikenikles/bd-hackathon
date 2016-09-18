@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import getRebase from '../../utils/rebase'
-import bathroom from '../../utils/rebase'
 import './project-list.scss';
 
 import { Link } from 'react-router'

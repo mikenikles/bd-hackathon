@@ -17,7 +17,6 @@ class AddPictureEntry extends React.Component {
   render() {
     return (
       <div>
-        <p>Add picture</p>
         <p>
           <input onChange={this.takePicture} id="picture" type="file" accept="image/*;capture=camera" />
         </p>

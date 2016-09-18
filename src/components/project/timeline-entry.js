@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 const TimelineEntry = ({
   timestamp,
@@ -7,13 +8,13 @@ const TimelineEntry = ({
   media
 }) => {
   return (
-    <div>
+    <div className="c-timeline__entry">
       <p>
-        {timestamp}<br />
+        {moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')}<br />
         {content}
         {
           media && media.map((entry, idx) => {
-            return <img key={idx} src={entry.src} />
+            return <img key={idx} src={entry.src} alt=""/>
           })
         }
       </p>
