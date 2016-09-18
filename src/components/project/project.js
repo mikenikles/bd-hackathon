@@ -42,8 +42,8 @@ class Project extends Component {
     return (
       <div className="project">
         <section className="c-steps u-padding-sides-lg">
-            <h1>{project.name}</h1>
-            <p>{project.description}</p>
+            <h1 className="c-project-title">{project.name}</h1>
+            <p  className="c-project-subtitle">{project.description}</p>
             <div className="c-attribute">
                 <div className="c-attribute__wrapper">
                     <div className="c-attribute__item">
