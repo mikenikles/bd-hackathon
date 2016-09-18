@@ -35,7 +35,7 @@ class ProjectList extends Component {
                     <Link to={ "/projects/" + idx}>
                     <div className="delete-later u-margin-bottom-lg"></div>
                     <span className="c-project-tile__title">{project.name}</span>
-                    <span className="c-project-tile__status">In Progress</span>
+                    <div className="c-project-tile__status">In Progress</div>
                     <p className="c-project-tile__description">{project.description}</p>
                     </Link>
                 </article>

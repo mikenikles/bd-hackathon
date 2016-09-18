@@ -69,7 +69,7 @@ class Project extends Component {
         </section>
         <section className="c-steps u-padding-all-lg">
             <h2>2. Decisions</h2>
-            <p>Now you know what you want to accomplish, it's time to make some decisions.</p>
+            <p>Now you know what you want to accomplish, it&#39;s time to make some decisions.</p>
             <h4>What I need</h4>
             <label htmlFor="cbox1">Products</label>
             <ul>
