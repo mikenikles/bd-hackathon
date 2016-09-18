@@ -12,22 +12,18 @@ class ProductBox extends Component {
     }
   }
 
-  loadProducts() {
-    loadProduct('10082137').then((product) => {
-      this.setState({
-        products: this.state.products.concat([product])
-      })
-    });
-
-    loadProduct('10079777').then((product) => {
-      this.setState({
-        products: this.state.products.concat([product])
-      })
+  loadProducts(ids) {
+    ids.map((id) => {
+      loadProduct(id).then((product) => {
+        this.setState({
+          products: this.state.products.concat([product])
+        })
+      });
     });
   }
 
   componentDidMount() {
-    this.loadProducts();
+    this.loadProducts(this.props.ids);
   }
 
   render() {
