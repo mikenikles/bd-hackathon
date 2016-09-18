@@ -1,0 +1,24 @@
+.c-timeline {
+    position: relative;
+}
+
+.c-timeline__entry {
+    border: 2px solid orange;
+    border-radius: 6px;
+    padding: $unit*2;
+    background-color: $white;
+    margin-bottom: 25px;
+
+    &:not(:last-child):after {
+        content: '';
+        display: block;
+        background-color: $brand-orange;
+        height: 25px;
+        width: 2px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -35px;
+        position: relative;
+    }
+}

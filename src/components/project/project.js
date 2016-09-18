@@ -110,15 +110,20 @@ class Project extends Component {
         <section className="c-steps u-padding-sides-lg">
             <h2 className="u-margin-top-xlg">3. Chart Your Progress</h2>
           <section className="c-timeline">
-              <div>
-                  {
-                    timelineEntries.reverse().map((timelineEntry, idx) => {
-                      return <TimelineEntry key={idx} {...timelineEntry}/>
-                    })
-                  }
-              </div>
+              {
+                timelineEntries.reverse().map((timelineEntry, idx) => {
+                  return <TimelineEntry key={idx} {...timelineEntry}/>
+                })
+              }
           </section>
-          <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Add Milestone</Link>
+
+          <div className="u-text-align-center">
+              <Link className="c-button c--add" to={`/projects/${this.props.params.id}/add-timeline-entry`}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><style type="text/css">
+                  </style><title>  Shape</title><path class="st0" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zM36 26.4h-9.6V36h-4.8v-9.6H12v-4.8h9.6V12h4.8v9.6H36C36 21.6 36 26.4 36 26.4z"/></svg>
+              <div className="u-margin-top-md">Add Milestone</div>
+              </Link>
+          </div>
         </section>
         <section className="c-steps u-padding-all-lg">
             <h2>4. Project Complete!</h2>

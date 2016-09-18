@@ -7,7 +7,7 @@ const TimelineEntry = ({
   media
 }) => {
   return (
-    <div>
+    <div className="c-timeline__entry">
       <p>
         {timestamp}<br />
         {content}
