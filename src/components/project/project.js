@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import getRebase from '../../utils/rebase'
+import photo from '../../assets/images/pintrest-bathroom.jpg';
+import photo2 from '../../assets/images/3d-design.png';
 import './project.scss';
 import TimelineEntry from './timeline-entry'
 import '../../index.scss';
@@ -59,6 +61,12 @@ class Project extends Component {
             Think about what you like, what you will need and what skills and tools you will need.</p>
             <div className="c-block">
                 <h4>Inspirations</h4>
+                <img src={photo} alt="bathroom"/>
+                <div className="u-display-flex u--align-center u-margin-top-lg">
+                    <svg className="c-icon c--medium c--brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><style type="text/css">
+                    </style><title>  Shape</title><path className="st0" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zM36 26.4h-9.6V36h-4.8v-9.6H12v-4.8h9.6V12h4.8v9.6H36C36 21.6 36 26.4 36 26.4z"/></svg>
+                    <span className="u-padding-left-lg">Add Inspiration</span>
+                </div>
             </div>
             <div className="c-block">
                 <h4>Design</h4>
