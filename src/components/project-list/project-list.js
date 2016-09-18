@@ -24,18 +24,7 @@ class ProjectList extends Component {
   render() {
     return (
       <div className="ProjectList">
-        <Link to="/">Home</Link>
         <h1>Project Timeline Dashboard</h1>
-
-        <Link to="/project-setup">Project-setup</Link>
-
-        <span>Add a new project to track your:</span>
-        <ul className="c-list c--bullets">
-            <li>Research &amp; Ideation</li>
-            <li>Project Decisions</li>
-            <li> Progess Timeline</li>
-            <li>Project Completion</li>
-        </ul>
         <h2>Your Projects</h2>
         <ul>
         {
@@ -52,6 +41,7 @@ class ProjectList extends Component {
           })
         }
         </ul>
+        <Link to="/project-setup">Project-setup</Link>
       </div>
     );
   }
