@@ -55,7 +55,8 @@ class Project extends Component {
         </section>
         <section className="c-steps u-padding-all-lg">
             <h2>1. Research &amp; Ideation</h2>
-            <p>paragraph text</p>
+            <p>Having a pla and collecting inspiration will make your project go much smoother.
+            Think about what you like, what you will need and what skills and tools you will need.</p>
             <div className="c-block">
                 <h4>Inspirations</h4>
             </div>
@@ -67,8 +68,8 @@ class Project extends Component {
             <hr></hr>
         </section>
         <section className="c-steps u-padding-all-lg">
-            <h2>Decisions</h2>
-            <p>paragraph text</p>
+            <h2>2. Decisions</h2>
+            <p>Now you know what you want to accomplish, it's time to make some decisions.</p>
             <h4>What I need</h4>
             <label htmlFor="cbox1">Products</label>
             <ul>
@@ -85,20 +86,35 @@ class Project extends Component {
                 })
               }
             </ul>
-            <Link to={`/projects/${this.props.params.id}/search`}>Add Products</Link>
-            <input type="checkbox" id="tasks" value="tasks"></input> <label htmlFor="cbox2">Tasks</label>
+            <Link to={`/projects/${this.props.params.id}/search`}>Search for products and tools</Link>
             <hr></hr>
         </section>
-        <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
-
-        <section className="c-timeline">
-            <div>
-                {
-                  timelineEntries.reverse().map((timelineEntry, idx) => {
-                    return <TimelineEntry key={idx} {...timelineEntry}/>
-                  })
-                }
-            </div>
+        <section className="c-steps u-padding-all-lg">
+            <h2>3. Chart Your Progress</h2>
+          <section className="c-timeline">
+              <div>
+                  {
+                    timelineEntries.reverse().map((timelineEntry, idx) => {
+                      return <TimelineEntry key={idx} {...timelineEntry}/>
+                    })
+                  }
+              </div>
+          </section>
+          <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Add Milestone</Link>
+        </section>
+        <section className="c-steps u-padding-all-lg">
+            <h2>4. Project Complete!</h2>
+            <button className="c-button c--primary c--full-width">I'M DONE</button>
+            <h5>Actual Time to Complete</h5>
+              <div className="u-display-flex u--space-between">
+                <label>1 &gt; Day</label><label>Weekend</label><label>Week</label><label>Month</label><label>3 Month</label><label>Year</label>
+              </div>
+              <input className="c-range" type="range"></input>
+              <h5>Budget (Approximate)</h5>
+              <div className="u-display-flex u--space-between">
+                <label>0</label><label>$250k</label>
+              </div>
+              <input className="c-range u-margin-bottom-xxlg" type="range"></input>
         </section>
       </div>
     );
