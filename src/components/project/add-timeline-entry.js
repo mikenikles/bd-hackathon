@@ -1,5 +1,6 @@
 import React from 'react'
 import getRebase from '../../utils/rebase'
+import SpeechRecognition from '../speech-recognition/speech-recognition'
 
 class AddTimelineEntry extends React.Component {
 
@@ -9,6 +10,8 @@ class AddTimelineEntry extends React.Component {
     this.state = {
       projects: []
     }
+
+    this.logWork = this.logWork.bind(this)
   }
 
   componentDidMount(){
@@ -19,16 +22,33 @@ class AddTimelineEntry extends React.Component {
     })
   }
 
+  logWork(content) {
+    console.log(content)
+    const projects = this.state.projects
+    const project = projects[this.props.location.query.id]
+    if (!project.timeline) {
+      project.timeline = []
+    }
+    project.timeline.push({
+      timestamp: new Date(),
+      content: content
+    })
+    this.setState({
+      projects: projects
+    })
+  }
+
   render () {
     if (this.state.projects.length === 0) {
       return false
     }
 
-    const project = this.state.projects[this.props.location.query.id]
+
 
     return (
       <div>
         Log work here
+        <SpeechRecognition onEnd={this.logWork} />
       </div>
     )
   }

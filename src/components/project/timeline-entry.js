@@ -3,7 +3,7 @@ import React from 'react'
 const TimelineEntry = ({
   timestamp,
   content,
-  tags,
+  tags = [],
   media
 }) => {
   return (

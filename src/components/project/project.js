@@ -29,15 +29,7 @@ class Project extends Component {
 
     const project = this.state.projects[this.props.location.query.id]
 
-    const timelineEntries = [{
-      timestamp: 'September 17, 2016',
-      content: 'Project started',
-      tags: ['new-project'],
-      media: [{
-        type: 'image',
-        src: ''
-      }]
-    }]
+    const timelineEntries = project.timeline || []
 
     return (
       <div className="Project">
@@ -45,11 +37,16 @@ class Project extends Component {
           This is the Project {"#" + this.props.location.query.id} page.
         </p>
         <p>{project.name}</p>
-        <Link to="/project/add-timeline-entry">Log Work</Link>
+        <Link to={`/project/add-timeline-entry?id=${this.props.location.query.id}`}>Log Work</Link>
         <p>
           {
-            timelineEntries.map((timelineEntry, idx) => {
-              return <TimelineEntry key={idx} {...timelineEntry}/>
+            timelineEntries.reverse().map((timelineEntry, idx) => {
+              return (
+                <div>
+                  <TimelineEntry key={idx} {...timelineEntry}/>
+                  <hr />
+                </div>
+              )
             })
           }
         </p>
