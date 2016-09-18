@@ -39,7 +39,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="u-display-flex u--space-between c-header">
+          <Link to="/projects">
             <img src={menu} alt="Menu"></img>
+          </Link>
             <img src={phone} alt="Phone"></img>
           <Link to="/" className="c-header__logo">
             <img src={logo} alt="logo" />

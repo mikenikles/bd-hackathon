@@ -72,7 +72,7 @@ class Project extends Component {
             <h2>Decisions</h2>
             <p>paragraph text</p>
             <h4>What I need</h4>
-            <label for="cbox1">Products</label>
+            <label htmlFor="cbox1">Products</label>
             <ul>
               {
                 Object.keys(products).map(function (key) {
@@ -88,7 +88,7 @@ class Project extends Component {
               }
             </ul>
             <Link to={`/projects/${this.props.params.id}/search`}>Add Products</Link>
-            <input type="checkbox" id="tasks" value="tasks"></input> <label for="cbox2">Tasks</label>
+            <input type="checkbox" id="tasks" value="tasks"></input> <label htmlFor="cbox2">Tasks</label>
             <hr></hr>
         </section>
         <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
