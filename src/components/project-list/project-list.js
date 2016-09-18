@@ -15,6 +15,8 @@ class ProjectList extends Component {
     this.state = {
       projects: []
     }
+
+    this.renderLatestProjectPicture = this.renderLatestProjectPicture.bind(this)
   }
 
   componentDidMount(){
@@ -23,6 +25,17 @@ class ProjectList extends Component {
       state: 'projects',
       asArray: true
     })
+  }
+
+  renderLatestProjectPicture(project) {
+    if (project.timeline && project.timeline.length > 0) {
+      const mostRecentTimelineEntry = project.timeline.reverse()[0]
+      if (mostRecentTimelineEntry.media && mostRecentTimelineEntry.media.length > 0) {
+        const mostRecentPicture = mostRecentTimelineEntry.media.reverse()[0]
+        return <img src={mostRecentPicture.src} alt=""/>
+      }
+    }
+    return <div className="delete-later u-margin-bottom-lg"></div>
   }
 
   render() {
@@ -36,7 +49,7 @@ class ProjectList extends Component {
             return <li key={idx}>
                 <article className="c-project-tile u-margin-bottom-xxlg">
                     <Link to={ "/projects/" + idx}>
-                    <div className="delete-later u-margin-bottom-lg"></div>
+                    { this.renderLatestProjectPicture(project) }
                     <span className="c-project-tile__title">{project.name}</span>
                     <div className="c-project-tile__status">{ renderStatus(project.completed) }</div>
                     <p className="c-project-tile__description">{project.description}</p>
