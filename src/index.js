@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import App from './components/App/App';
+import Home from './components/home/home';
 import About from './components/About/About';
 import Login from './components/login/login';
 import Project from './components/project/project';
@@ -11,12 +12,14 @@ import './index.scss';
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App}/>
-    <Route path="/about" component={About}/>
-    <Route path="/login" component={Login}/>
-    <Route path="/project" component={Project}/>
-    <Route path="/project/add-timeline-entry" component={AddTimelineEntry}/>
-    <Route path="/project-list" component={ProjectList}/>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
+      <Route path="/about" component={About}/>
+      <Route path="/login" component={Login}/>
+      <Route path="/projects" component={ProjectList}/>
+      <Route path="/projects/:id" component={Project}/>
+      <Route path="/projects/:id/add-timeline-entry" component={AddTimelineEntry}/>
+    </Route>
   </Router>,
   document.getElementById('root')
 );

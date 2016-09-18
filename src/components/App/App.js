@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import getRebase from '../../utils/rebase'
 import logo from '../../assets/logo.svg';
-import './App.scss';
-
 import { Link } from 'react-router'
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -26,10 +25,6 @@ class App extends Component {
 
   onAddData() {
     const projects = this.state.projects
-    projects.push({
-      id: Math.random(),
-      name: 'hello'
-    })
     this.setState({
       projects: projects
     })
@@ -40,17 +35,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Link to="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Link>
           <h1>Welcome to React</h1>
           <p>This is text</p>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Link to="/about">About</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/project">Project</Link>
-        <Link to="/project-list">Project-list</Link>
+        { this.props.children }
       </div>
     );
   }

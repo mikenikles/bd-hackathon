@@ -25,7 +25,7 @@ class AddTimelineEntry extends React.Component {
   logWork(content) {
     console.log(content)
     const projects = this.state.projects
-    const project = projects[this.props.location.query.id]
+    const project = projects[this.props.params.id]
     if (!project.timeline) {
       project.timeline = []
     }

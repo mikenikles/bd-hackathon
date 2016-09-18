@@ -54,9 +54,6 @@ class ProjectList extends Component {
       <div className="ProjectList">
         <Link to="/">Home</Link>
         <h1>Project Timeline Dashboard</h1>
-
-        <h2>Add New Project</h2>
-
         <span>Add a new project to track your:</span>
         <ul className="c-list c--bullets">
             <li>Research &amp; Ideation</li>
@@ -75,7 +72,7 @@ class ProjectList extends Component {
           this.state.projects.map((project, idx) => {
             return <li key={idx}>
                 <article className="c-project-tile u-margin-bottom-xxlg">
-                    <Link to={ "/project?id=" + idx}>
+                    <Link to={ "/projects/" + idx}>
                     <div className="delete-later u-margin-bottom-lg"></div>
                     <span className="c-project-tile__title">{project.name}</span>
                     <p className="c-project-tile__description">{project.description}</p>
