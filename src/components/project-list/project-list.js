@@ -9,14 +9,8 @@ class ProjectList extends Component {
     super(props)
 
     this.state = {
-      newProjectName: '',
-      newProjectDescription: '',
       projects: []
     }
-
-    this.onAddData = this.onAddData.bind(this)
-    this.onNewProjectNameChange = this.onNewProjectNameChange.bind(this)
-    this.onNewProjectDescription = this.onNewProjectDescription.bind(this)
   }
 
   componentDidMount(){
@@ -27,33 +21,14 @@ class ProjectList extends Component {
     })
   }
 
-  onNewProjectNameChange(e){
-    this.setState({newProjectName: e.target.value});
-  }
-
-  onNewProjectDescription(e){
-    this.setState({newProjectDescription: e.target.value});
-  }
-
-  onAddData(e) {
-    e.preventDefault()
-
-    const projects = this.state.projects
-    projects.push({
-      id: Math.random(),
-      name: this.state.newProjectName,
-      description: this.state.newProjectDescription
-    })
-    this.setState({
-      projects: projects
-    })
-  }
-
   render() {
     return (
       <div className="ProjectList">
         <Link to="/">Home</Link>
         <h1>Project Timeline Dashboard</h1>
+
+        <Link to="/project-setup">Project-setup</Link>
+
         <span>Add a new project to track your:</span>
         <ul className="c-list c--bullets">
             <li>Research &amp; Ideation</li>
@@ -61,11 +36,6 @@ class ProjectList extends Component {
             <li> Progess Timeline</li>
             <li>Project Completion</li>
         </ul>
-        <form onSubmit={this.onAddData}>
-          <input placeholder="Name" onChange={this.onNewProjectNameChange} value={this.state.newProjectName} />
-          <input placeholder="Description" onChange={this.onNewProjectDescription} value={this.state.newProjectDescription} />
-          <button>Add Project</button>
-        </form>
         <h2>Your Projects</h2>
         <ul>
         {
