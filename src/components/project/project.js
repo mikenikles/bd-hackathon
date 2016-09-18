@@ -91,10 +91,14 @@ class Project extends Component {
                 Object.keys(products).map(function (key) {
                   let product = project.products[key]
                   return <li key={key}>
-                    <a href={product.url}>
-                      <img src={product.image} alt=""/>
-                      <p>{product.title}</p>
-                      <p>${product.price} / {product.priceUnit}</p>
+                    <a href={product.url} className="c-product u-display-flex">
+                    <div className="c-product__image">
+                          <img src={product.image} alt=""/>
+                      </div>
+                      <div className="c-product__description">
+                          <p>{product.title}</p>
+                          <p>${product.price} / {product.priceUnit}</p>
+                      </div>
                     </a>
                   </li>
                 })
