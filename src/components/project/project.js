@@ -28,7 +28,7 @@ class Project extends Component {
       return false
     }
 
-    const project = this.state.projects[this.props.location.query.id]
+    const project = this.state.projects[this.props.params.id]
 
     const timelineEntries = project.timeline || []
     const products = project.products || {}
@@ -39,7 +39,7 @@ class Project extends Component {
             <Link to="/">Home</Link>
 
             <h1>{project.name}</h1>
-            <Link to={`/project/add-timeline-entry?id=${this.props.location.query.id}`}>Log Work</Link>
+            <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
 
             <p>{project.description}</p>
             <div className="c-attribute">
@@ -55,8 +55,6 @@ class Project extends Component {
                     <div className="c-attribute__item"></div>
                     <span>Budget</span>
                 </div>
-                <button className="c-button c--primary c--full-width">Lutton</button>
-                <input className="c-range" type="range"></input>
             </div>
         </section>
         <section className="c-steps">

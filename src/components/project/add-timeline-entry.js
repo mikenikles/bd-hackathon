@@ -1,6 +1,7 @@
 import React from 'react'
 import getRebase from '../../utils/rebase'
-import SpeechRecognition from '../speech-recognition/speech-recognition'
+import AddAudioEntry from './add-audio-entry'
+import AddPictureEntry from './add-picture-entry'
 
 class AddTimelineEntry extends React.Component {
 
@@ -11,7 +12,8 @@ class AddTimelineEntry extends React.Component {
       projects: []
     }
 
-    this.logWork = this.logWork.bind(this)
+    this.addAudioEntry = this.addAudioEntry.bind(this)
+    this.addPictureEntry = this.addPictureEntry.bind(this)
   }
 
   componentDidMount(){
@@ -22,10 +24,10 @@ class AddTimelineEntry extends React.Component {
     })
   }
 
-  logWork(content) {
+  addAudioEntry(content) {
     console.log(content)
     const projects = this.state.projects
-    const project = projects[this.props.location.query.id]
+    const project = projects[this.props.params.id]
     if (!project.timeline) {
       project.timeline = []
     }
@@ -38,17 +40,20 @@ class AddTimelineEntry extends React.Component {
     })
   }
 
+  addPictureEntry(picture) {
+    console.log('addPictureEntry', picture)
+  }
+
   render () {
     if (this.state.projects.length === 0) {
       return false
     }
 
-
-
     return (
       <div>
         Log work here
-        <SpeechRecognition onEnd={this.logWork} />
+        <AddAudioEntry onAddEntry={this.addAudioEntry}/>
+        <AddPictureEntry onPictureEntry={this.addPictureEntry}/>
       </div>
     )
   }

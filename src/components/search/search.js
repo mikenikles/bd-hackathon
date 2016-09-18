@@ -34,7 +34,7 @@ class Search extends React.Component {
   saveProduct(product) {
     console.log(product)
     const projects = this.state.projects
-    const project = projects[this.props.location.query.id]
+    const project = projects[this.props.params.id]
     if (!project.products) {
       project.products = {}
     }
@@ -65,7 +65,7 @@ class Search extends React.Component {
         console.log("Search result", response.data.products)
 
         let products = response.data.products
-        const savedProducts = self.state.projects[self.props.location.query.id].products
+        const savedProducts = self.state.projects[self.props.params.id].products
 
         products = products.map(function(product) {
           product.added = savedProducts && savedProducts[product.skuNumber] ? 'added' : ''
@@ -88,7 +88,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        <Link to={`/project?id=${this.props.location.query.id}`}>Done</Link>
+        <Link to={`/project?id=${this.props.params.id}`}>Done</Link>
         <form onSubmit={this.onSearchSubmit}>
           <label>Search</label>
           <input placeholder="Search Term" onChange={this.onSearchTermChange} value={this.state.searchTerm} />

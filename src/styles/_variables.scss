@@ -30,13 +30,20 @@ $large-line-height: 36px;
 $tap-size: 44px;
 $slow-animation: 0.25s ease-in-out all;
 
+$border: 1px solid $ui-grey;
+$border-radius: 2px;
 
-//
+
+// Global styles
+html {
+    color: $font-color;
+    font-family: 'Lato', sans-serif;
+}
+
 body {
+    background-color: $white;
     margin: 0;
     padding: $v-space;
-    font-family: 'Lato', sans-serif;
-    // font-weight: normal;
 }
 
 h1, h2, h3, h5  {
@@ -61,14 +68,42 @@ h3, h4, p, li, label {
 }
 
 h5 {
+    font-size: $font-size;
     line-height: $small-line-height;
 }
 
+ul {
+    padding: 0;
+}
 
+a {
+    text-decoration: none;
+    color: $font-color;
+}
 
+label {
+    font-size: 14px;
+    color: $light-grey;
+}
+
+input {
+    font-family: $font-family;
+}
+
+input[type="text"], textarea {
+    padding: $unit*4 $unit*3; // 12px
+    border: $border;
+    border-radius: $border-radius;
+    width: 93%;
+    font-size: 16px;
+    font-family: $font-family;
+}
+
+img {
+    max-width: 100%;
+}
 
 // Fonts
-
 @font-face {
     font-family: 'Lato';
     src: url('./assets/fonts/LatoLatin-Regular.eot');
@@ -79,4 +114,11 @@ h5 {
          url('./assets/fonts/LatoLatin-Regular.svg#lato') format("svg");
     font-weight: normal;
     font-style: normal;
+}
+
+
+.delete-later {
+    width: 100%;
+    height: 150px;
+    background-color: $ui-grey;
 }
