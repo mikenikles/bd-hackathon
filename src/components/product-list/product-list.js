@@ -3,20 +3,18 @@ import ProductDetail from '../product/product-detail';
 import './product-list.scss';
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      products: []
-    }
-  }
-
   render() {
+    var products = this.props.products;
     return (
       <div className="product-list">
-        Hi I am a product list
         {
-          this.state.products.map((product, idx) => {
-            return <ProductDetail data={product} />
+          products.map((product) => {
+            return (
+              <ProductDetail
+                key={product.data.productId}
+                {...product.data}
+              />
+            )
           })
         }
       </div>

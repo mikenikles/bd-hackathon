@@ -12,25 +12,29 @@ class ProductBox extends Component {
     }
   }
 
-  componentDidMount() {
-    // TODO: replace wit actual products
+  loadProducts() {
     loadProduct('10082137').then((product) => {
-      console.log(product);
-      this.state.products.push(product.data);
+      this.setState({
+        products: this.state.products.concat([product])
+      })
     });
 
     loadProduct('10079777').then((product) => {
-      this.state.products.push(product.data);
-      console.log(this.state.products);
+      this.setState({
+        products: this.state.products.concat([product])
+      })
     });
+  }
+
+  componentDidMount() {
+    this.loadProducts();
   }
 
   render() {
     return (
       <div className="product-box">
         <div className="product-listing">
-          This is the container for products of this entry.
-          <ProductList data={this.state.products} />
+          <ProductList products={this.state.products} />
         </div>
       </div>
     );
