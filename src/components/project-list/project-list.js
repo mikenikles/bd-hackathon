@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import getRebase from '../../utils/rebase'
+import bathroom from '../../utils/rebase'
 import './project-list.scss';
 
 import { Link } from 'react-router'
@@ -38,7 +39,7 @@ class ProjectList extends Component {
                     <Link to={ "/projects/" + idx}>
                     <div className="delete-later u-margin-bottom-lg"></div>
                     <span className="c-project-tile__title">{project.name}</span>
-                    <span className="c-project-tile__status">{ renderStatus(project.completed) }</span>
+                    <div className="c-project-tile__status">{ renderStatus(project.completed) }</div>
                     <p className="c-project-tile__description">{project.description}</p>
                     </Link>
                 </article>
