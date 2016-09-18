@@ -48,6 +48,7 @@ class ProjectSetup extends Component {
       this.setState({
         projects: projects
       })
+      this.props.history.push('/projects/' + (projects.length - 1))
     }
 
   render() {
