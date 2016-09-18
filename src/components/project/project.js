@@ -117,13 +117,14 @@ class Project extends Component {
               }
           </section>
 
-          <div className="u-text-align-center">
+          <div className="u-text-align-center u-margin-bottom-xxxlg">
               <Link className="c-button c--add" to={`/projects/${this.props.params.id}/add-timeline-entry`}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><style type="text/css">
                   </style><title>  Shape</title><path class="st0" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zM36 26.4h-9.6V36h-4.8v-9.6H12v-4.8h9.6V12h4.8v9.6H36C36 21.6 36 26.4 36 26.4z"/></svg>
               <div className="u-margin-top-md">Add Milestone</div>
               </Link>
           </div>
+          <hr/>
         </section>
         <section className="c-steps u-padding-sides-lg u-margin-bottom-xxxlg">
             <h2>4. Project Complete!</h2>
