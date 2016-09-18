@@ -99,6 +99,10 @@ input[type="text"], textarea {
     font-family: $font-family;
 }
 
+img {
+    max-width: 100%;
+}
+
 // Fonts
 @font-face {
     font-family: 'Lato';
