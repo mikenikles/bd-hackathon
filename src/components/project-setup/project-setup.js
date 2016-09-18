@@ -36,6 +36,13 @@ class ProjectSetup extends Component {
       this.setState({newProjectDescription: e.target.value});
     }
 
+    onBudgetChange(e) {
+      let label = document.getElementsByClassName('js-budget-label')[0]
+
+      label.innerHTML = '$' + e.target.value * 1000
+      label.style = 'left: ' + ((e.target.value / 250 * 100) - 4) + '%'
+    }
+
     onAddData(e) {
       e.preventDefault()
 
@@ -44,7 +51,10 @@ class ProjectSetup extends Component {
         id: Math.random(),
         name: this.state.newProjectName,
         description: this.state.newProjectDescription,
-        completed: false
+        completed: false,
+        skill: document.getElementsByClassName('js-skill')[0].value,
+        estimatedTime: document.getElementsByClassName('js-estimated-time')[0].value,
+        budget: document.getElementsByClassName('js-budget')[0].value 
       })
       this.setState({
         projects: projects
@@ -89,17 +99,18 @@ class ProjectSetup extends Component {
               <div className="u-display-flex u--space-between">
                 <label>Beginner</label><label>Intermediate</label><label>Advanced</label>
               </div>
-              <input className="c-range" type="range"></input>
+              <input className="c-range js-skill" type="range" min ="1" max="3" step="1"></input>
               <h5>Time to Complete (Approximate)</h5>
               <div className="u-display-flex u--space-between">
                 <label>1 &gt; Day</label><label>Weekend</label><label>Week</label><label>Month</label><label>3 Month</label><label>Year</label>
               </div>
-              <input className="c-range" type="range"></input>
+              <input className="c-range js-estimated-time" type="range" min ="1" max="6" step="1"></input>
               <h5>Budget (Approximate)</h5>
+              <label className="js-budget-label c-budget__label"></label>
+              <input className="js-budget c-range c-budget__range u-margin-bottom-xxlg" onChange={this.onBudgetChange} type="range" min ="0" max="250" step="1"></input>
               <div className="u-display-flex u--space-between">
                 <label>0</label><label>$250k</label>
               </div>
-              <input className="c-range u-margin-bottom-xxlg" type="range"></input>
           </section>
 
           <button className="c-button c--primary c--full-width">Next</button>
