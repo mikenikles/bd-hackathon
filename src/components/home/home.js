@@ -1,6 +1,5 @@
 import React from 'react'
 import './home.scss';
-import plus from '../../assets/icons/plus.svg';
 import { Link } from 'react-router'
 
 const Home = (props) => {
