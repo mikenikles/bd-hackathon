@@ -1,5 +1,6 @@
 import React from 'react'
 import getRebase from '../../utils/rebase'
+import moment from 'moment'
 import AddAudioEntry from './add-audio-entry'
 import AddPictureEntry from './add-picture-entry'
 
@@ -61,7 +62,7 @@ class AddTimelineEntry extends React.Component {
 
     // Initialize timeline entry
     const timelineEntry = {
-      timestamp: new Date().now(),
+      timestamp: Date.now(),
       content: '',
       media: []
     }

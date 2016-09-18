@@ -10,7 +10,7 @@ const TimelineEntry = ({
   return (
     <div className="c-timeline__entry">
       <p>
-        {moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')}<br />
+        {timestamp && moment(timestamp).fromNow()}<br />
         {content}
         {
           media && media.map((entry, idx) => {
