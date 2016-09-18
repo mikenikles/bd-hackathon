@@ -6,6 +6,10 @@ import './project.scss';
 import TimelineEntry from './timeline-entry'
 import '../../index.scss';
 
+import skillBadge from '../../assets/icons/skill-intermediate.svg';
+import timeBadge from '../../assets/icons/time-3month.svg';
+import budgetBadge from '../../assets/icons/budget-5k.svg';
+
 import { Link } from 'react-router'
 
 class Project extends Component {
@@ -38,19 +42,25 @@ class Project extends Component {
     return (
       <div className="project">
         <section className="c-steps u-padding-sides-lg">
-            <h1>{project.name}</h1>
-            <p>{project.description}</p>
+            <h1 className="c-project-title">{project.name}</h1>
+            <p  className="c-project-subtitle">{project.description}</p>
             <div className="c-attribute">
-                <div>
-                    <div className="c-attribute__item"></div>
+                <div className="c-attribute__wrapper">
+                    <div className="c-attribute__item">
+                      <img src={skillBadge} alt="Skill"></img>
+                    </div>
                     <span>Skill Level</span>
                 </div>
-                <div>
-                    <div className="c-attribute__item"></div>
+                <div className="c-attribute__wrapper">
+                    <div className="c-attribute__item">
+                      <img src={timeBadge} alt="Estimated Time"></img>
+                    </div>
                     <span>Time</span>
                 </div>
-                <div>
-                    <div className="c-attribute__item"></div>
+                <div className="c-attribute__wrapper">
+                    <div className="c-attribute__item">
+                      <img src={budgetBadge} alt="Budget"></img>
+                    </div>
                     <span>Budget</span>
                 </div>
             </div>
@@ -91,10 +101,14 @@ class Project extends Component {
                 Object.keys(products).map(function (key) {
                   let product = project.products[key]
                   return <li key={key}>
-                    <a href={product.url}>
-                      <img src={product.image} alt=""/>
-                      <p>{product.title}</p>
-                      <p>${product.price} / {product.priceUnit}</p>
+                    <a href={product.url} className="c-product u-display-flex">
+                    <div className="c-product__image">
+                          <img src={product.image} alt=""/>
+                      </div>
+                      <div className="c-product__description">
+                          <p>{product.title}</p>
+                          <p>${product.price} / {product.priceUnit}</p>
+                      </div>
                     </a>
                   </li>
                 })
@@ -117,13 +131,14 @@ class Project extends Component {
               }
           </section>
 
-          <div className="u-text-align-center">
+          <div className="u-text-align-center u-margin-bottom-xxxlg">
               <Link className="c-button c--add" to={`/projects/${this.props.params.id}/add-timeline-entry`}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><style type="text/css">
                   </style><title>  Shape</title><path class="st0" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zM36 26.4h-9.6V36h-4.8v-9.6H12v-4.8h9.6V12h4.8v9.6H36C36 21.6 36 26.4 36 26.4z"/></svg>
               <div className="u-margin-top-md">Add Milestone</div>
               </Link>
           </div>
+          <hr/>
         </section>
         <section className="c-steps u-padding-sides-lg u-margin-bottom-xxxlg">
             <h2>4. Project Complete!</h2>

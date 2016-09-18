@@ -113,8 +113,8 @@ class AddTimelineEntry extends React.Component {
       <div>
         <section className="u-padding-sides-lg">
         <h1>Add to timeline</h1>
-        <p>Upload a picture, record your progress or ask a question here. When you're ready, tap the "Save to timeline" button.</p>
-        <div className="timeline-entry-type u-display-flex u--space-between">
+        <p>Upload a picture, record your progress or ask a question here. When you&#39;re ready, tap the "Save to timeline" button.</p>
+        <div className="timeline-entry-type u-display-flex u--space-between u--align-center">
           <a className="audio" onClick={() => this.setState({ timelineEntryType: 'audio' })}><img src={audio} alt="Audio" className="c-icon c--large"></img></a>
           <a className="video" onClick={() => this.setState({ timelineEntryType: 'video' })}><img src={video} alt="Video" className="c-icon c--large"></img></a>
           <a className="camera" onClick={() => this.setState({ timelineEntryType: 'image' })}><img src={camera} alt="Image" className="c-icon c--large"></img></a>
