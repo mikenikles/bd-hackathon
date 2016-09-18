@@ -89,7 +89,7 @@ class Project extends Component {
                 })
               }
             </ul>
-            <Link to={`/project/search?id=${this.props.location.query.id}`}>Add Products</Link>
+            <Link to={`${this.props.params.id}/search`}>Add Products</Link>
             <input type="checkbox" id="tasks" value="tasks"></input> <label for="cbox2">Tasks</label>
             <hr></hr>
         </section>

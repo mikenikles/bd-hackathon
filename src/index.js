@@ -22,7 +22,7 @@ ReactDOM.render(
       <Route path="/project-setup" component={ProjectSetup}/>
       <Route path="/projects/:id" component={Project}/>
       <Route path="/projects/:id/add-timeline-entry" component={AddTimelineEntry}/>
-      <Route path="/project/:id/search" component={Search}/>
+      <Route path="/projects/:id/search" component={Search}/>
     </Route>
   </Router>,
   document.getElementById('root')

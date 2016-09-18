@@ -88,7 +88,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        <Link to={`/project?id=${this.props.params.id}`}>Done</Link>
+        <Link to={`/projects/${this.props.params.id}`}>Done</Link>
         <form onSubmit={this.onSearchSubmit}>
           <label>Search</label>
           <input placeholder="Search Term" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
