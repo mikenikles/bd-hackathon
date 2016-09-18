@@ -68,7 +68,7 @@ class AddTimelineEntry extends React.Component {
 
     // Initialize timeline entry
     const timelineEntry = {
-      timestamp: new Date(),
+      timestamp: new Date().now(),
       content: '',
       media: []
     }
@@ -93,6 +93,7 @@ class AddTimelineEntry extends React.Component {
       this.setState({
         projects: projects
       })
+      this.props.history.push('/projects/' + (projects.length - 1))
     })
   }
 
