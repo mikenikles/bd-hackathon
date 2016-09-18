@@ -10,6 +10,7 @@ class ProjectSetup extends Component {
       this.state = {
         newProjectName: '',
         newProjectDescription: '',
+        newProjectType: 0,
         newBeforeImage: '',
         projects: []
       }
@@ -18,6 +19,7 @@ class ProjectSetup extends Component {
       this.onNewProjectNameChange = this.onNewProjectNameChange.bind(this)
       this.onNewProjectDescription = this.onNewProjectDescription.bind(this)
       this.onAttachBeforePicture = this.onAttachBeforePicture.bind(this)
+      this.onSetProjectType = this.onSetProjectType.bind(this)
     }
 
     componentDidMount(){
@@ -36,8 +38,19 @@ class ProjectSetup extends Component {
       this.setState({newProjectDescription: e.target.value});
     }
 
+    onBudgetChange(e) {
+      let label = document.getElementsByClassName('js-budget-label')[0]
+
+      label.innerHTML = '$' + e.target.value * 1000
+      label.style = 'left: ' + ((e.target.value / 250 * 100) - 4) + '%'
+    }
+
     onAttachBeforePicture(e) {
       this.setState({newBeforePicture: e.target.files[0]})
+    }
+
+    onSetProjectType(type) {
+      this.setState({newProjectType: type})
     }
 
     onAddData(e) {
@@ -49,6 +62,10 @@ class ProjectSetup extends Component {
         id: Math.random(),
         name: this.state.newProjectName,
         description: this.state.newProjectDescription,
+        skill: document.getElementsByClassName('js-skill')[0].value,
+        estimatedTime: document.getElementsByClassName('js-estimated-time')[0].value,
+        budget: document.getElementsByClassName('js-budget')[0].value,
+        newProjectType: this.state.newProjectType,
         timeline: [],
         completed: false
       }
@@ -92,12 +109,12 @@ class ProjectSetup extends Component {
           <section className="u-margin-bottom-xxxlg">
           <h2>Project Type</h2>
           <ul className="c-list c--unlist c-radio-list">
-              <li className="u-margin-bottom-xxlg"><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="new-home"></input><div className="c-radio-list__indicator"></div>New Home or Structure</label></li>
-              <li className="u-margin-bottom-xxlg"><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="reno-indoor"></input><div className="c-radio-list__indicator"></div>Renovating Indoor Spaces</label></li>
-              <li className="u-margin-bottom-xxlg"><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="reno-outdoor"></input><div className="c-radio-list__indicator"></div>Renovating Outdoor Areas</label></li>
-              <li className="u-margin-bottom-xxlg"><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="decor-furniture"></input><div className="c-radio-list__indicator"></div>Decorating or Furniture</label></li>
-              <li className="u-margin-bottom-xxlg"><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="updating-interior"></input><div className="c-radio-list__indicator"></div>Updating Interior Features</label></li>
-              <li className="u-margin-bottom-xxlg"><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="updating-exterior"></input><div className="c-radio-list__indicator"></div>Updating Interior Features</label></li>
+              <li className="u-margin-bottom-xxlg" onClick={() => this.onSetProjectType(0)}><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="new-home"></input><div className="c-radio-list__indicator"></div>New Home or Structure</label></li>
+              <li className="u-margin-bottom-xxlg" onClick={() => this.onSetProjectType(1)}><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="reno-indoor"></input><div className="c-radio-list__indicator"></div>Renovating Indoor Spaces</label></li>
+              <li className="u-margin-bottom-xxlg" onClick={() => this.onSetProjectType(2)}><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="reno-outdoor"></input><div className="c-radio-list__indicator"></div>Renovating Outdoor Areas</label></li>
+              <li className="u-margin-bottom-xxlg" onClick={() => this.onSetProjectType(3)}><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="decor-furniture"></input><div className="c-radio-list__indicator"></div>Decorating or Furniture</label></li>
+              <li className="u-margin-bottom-xxlg" onClick={() => this.onSetProjectType(4)}><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="updating-interior"></input><div className="c-radio-list__indicator"></div>Updating Interior Features</label></li>
+              <li className="u-margin-bottom-xxlg" onClick={() => this.onSetProjectType(5)}><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="updating-exterior"></input><div className="c-radio-list__indicator"></div>Updating Interior Features</label></li>
           </ul>
           </section>
           <section className="u-margin-bottom-xxlg">
@@ -119,17 +136,18 @@ class ProjectSetup extends Component {
               <div className="u-display-flex u--space-between">
                 <label>Beginner</label><label>Intermediate</label><label>Advanced</label>
               </div>
-              <input className="c-range" type="range"></input>
+              <input className="c-range js-skill" type="range" min ="1" max="3" step="1"></input>
               <h5>Time to Complete (Approximate)</h5>
               <div className="u-display-flex u--space-between">
                 <label>1 &gt; Day</label><label>Weekend</label><label>Week</label><label>Month</label><label>3 Month</label><label>Year</label>
               </div>
-              <input className="c-range" type="range"></input>
+              <input className="c-range js-estimated-time" type="range" min ="1" max="6" step="1"></input>
               <h5>Budget (Approximate)</h5>
+              <label className="js-budget-label c-budget__label"></label>
+              <input className="js-budget c-range c-budget__range u-margin-bottom-xxlg" onChange={this.onBudgetChange} type="range" min ="0" max="250" step="1"></input>
               <div className="u-display-flex u--space-between">
                 <label>0</label><label>$250k</label>
               </div>
-              <input className="c-range u-margin-bottom-xxlg" type="range"></input>
           </section>
 
           <button className="c-button c--primary c--full-width">Add Project</button>
