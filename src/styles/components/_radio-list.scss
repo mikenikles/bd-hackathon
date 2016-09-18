@@ -1,0 +1,60 @@
+// Radio list
+
+.c-radio-list {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.c-radio-list input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.c-radio-list__label {
+    padding-left: 30px;
+}
+
+.c-radio-list__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background: transparent;
+  border: $border;
+}
+.c-radio-list__indicator {
+  border-radius: 50%;
+}
+
+.c-radio-list input:checked ~ .c-radio-list__indicator {
+  background: $brand-blue;
+}
+
+.c-radio-list input:disabled ~ .c-radio-list__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.c-radio-list__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.c-radio-list input:checked ~ .c-radio-list__indicator:after {
+  display: block;
+}
+
+.c-radio-list__indicator:after {
+  left: 6px;
+  top: 6px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.c-radio-list__label input:disabled ~ .c-radio-list__indicator:after {
+  background: #7b7b7b;
+}

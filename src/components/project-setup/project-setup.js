@@ -60,13 +60,13 @@ class ProjectSetup extends Component {
           <label>Project Name</label>
           <input type="text" className="u-margin-bottom-lg" placeholder="ie: Kitchen Renovation" onChange={this.onNewProjectNameChange} value={this.state.newProjectName} />
           <h2>Project Type</h2>
-          <ul className="c-list">
-              <li><input type="radio" name="project-type" value="new-home"></input><label>New Home or Structure</label></li>
-              <li><input type="radio" name="project-type" value="reno-indoor"></input><label>Renovating Indoor Spaces</label></li>
-              <li><input type="radio" name="project-type" value="reno-outdoor"></input><label>Renovating Outdoor Areas</label></li>
-              <li><input type="radio" name="project-type" value="decor-furniture"></input><label>Decorating or Furniture</label></li>
-              <li><input type="radio" name="project-type" value="updating-interior"></input><label>Updating Interior Features</label></li>
-              <li><input type="radio" name="project-type" value="updating-exterior"></input><label>Updating Interior Features</label></li>
+          <ul className="c-list c--unlist c-radio-list">
+              <li><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="new-home"></input><div className="c-radio-list__indicator"></div>New Home or Structure</label></li>
+              <li><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="reno-indoor"></input><div className="c-radio-list__indicator"></div>Renovating Indoor Spaces</label></li>
+              <li><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="reno-outdoor"></input><div className="c-radio-list__indicator"></div>Renovating Outdoor Areas</label></li>
+              <li><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="decor-furniture"></input><div className="c-radio-list__indicator"></div>Decorating or Furniture</label></li>
+              <li><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="updating-interior"></input><div className="c-radio-list__indicator"></div>Updating Interior Features</label></li>
+              <li><label className="c-radio-list c-radio-list__label"><input type="radio" name="project-type" value="updating-exterior"></input><div className="c-radio-list__indicator"></div>Updating Interior Features</label></li>
           </ul>
           <label>Project Description</label>
           <textarea className="u-margin-bottom-lg" placeholder="ie: Modernize kitchen with maple cabinets and granite countertops" onChange={this.onNewProjectDescription} value={this.state.newProjectDescription} />
