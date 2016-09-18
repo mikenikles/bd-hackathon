@@ -93,7 +93,7 @@ class Project extends Component {
             <input type="checkbox" id="tasks" value="tasks"></input> <label for="cbox2">Tasks</label>
             <hr></hr>
         </section>
-        <Link to="/project/add-timeline-entry">Log Work</Link>
+        <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
 
         <section className="c-timeline">
             <div>
