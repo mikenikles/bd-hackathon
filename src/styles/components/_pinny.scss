@@ -73,6 +73,12 @@
     flex-shrink: 0; // 1, 2
 }
 
+.pinny__footer {
+    display: flex;
+    padding: 12px;
+    border-top: $border;
+}
+
 
 // Pinny: Content
 // --------------

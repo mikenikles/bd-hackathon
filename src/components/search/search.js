@@ -101,11 +101,17 @@ class Search extends React.Component {
               <ul>
               {
                 this.state.searchProducts.map((product, idx) => {
-                  return <li key={idx}>
-                    <img src={product.image} alt=""/>
-                    <p>{product.title}</p>
-                    <p>${product.price} / {product.priceUnit}</p>
-                    <button className={product.added} onClick={this.saveProduct.bind(this, product)}>Add to List</button>
+                  return <li className="u-margin-bottom-xlg" key={idx}>
+                  <div className="c-product">
+                      <div className="c-product__image">
+                        <img src={product.image} alt=""/>
+                       </div>
+                        <div className="c-product__description">
+                            <p className="c-product__title">{product.title}</p>
+                            <p>${product.price} / {product.priceUnit}</p>
+                        </div>
+                    </div>
+                    <button className={product.added} className="c-button c--primary c--full-width" onClick={this.saveProduct.bind(this, product)}>Add to List</button>
                   </li>
                 })
               }
@@ -113,7 +119,7 @@ class Search extends React.Component {
             </div>
           </div>
           <div className="pinny__footer">
-            <Link to={`/projects/${this.props.params.id}`}>Done</Link>
+            <Link to={`/projects/${this.props.params.id}`} className="c-button c--primary c--full-width" >Done</Link>
           </div>
         </div>
       </div>
