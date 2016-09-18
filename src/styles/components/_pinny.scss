@@ -15,7 +15,7 @@
 
 .pinny {
     position: fixed; // 1
-    
+
     top: 0;
     right: 0;
     bottom: 0;
@@ -128,7 +128,30 @@
     padding: 0 5px;
     border-bottom: 1px solid #ededed;
 
-    background: white;
+    background: $brand-blue;
+    color: $white;
+    text-align: center;
+    padding: 12px;
+
+    h2 {
+        margin: 0 auto;
+    }
+
+    .close {
+        position: absolute;
+        right: 12px;
+        color: white;
+    }
+}
+
+
+.search-input {
+    background-image: url('./assets/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-size: 22px;
+    background-position-x: 10px;
+
 }
 
 

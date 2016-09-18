@@ -91,12 +91,11 @@ class Search extends React.Component {
         <div className="pinny__wrapper">
           <div className="pinny__header">
             <h2>Search Results</h2>
-            <Link to={`/projects/${this.props.params.id}`}>Close</Link>
+            <Link className="close" to={`/projects/${this.props.params.id}`}>Close</Link>
           </div>
           <div className="pinny__content">
             <form onSubmit={this.onSearchSubmit}>
-              <label>Search</label>
-              <input placeholder="Search Term" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
+              <input className="search-input u-padding-left-xxxlg" type="text" placeholder="ie: Kitchen tiles" onChange={this.onSearchTermChange} value={this.state.searchTerm} />
             </form>
             <div id="searchResults">
               <ul>
