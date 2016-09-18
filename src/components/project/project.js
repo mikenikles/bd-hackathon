@@ -6,6 +6,10 @@ import './project.scss';
 import TimelineEntry from './timeline-entry'
 import '../../index.scss';
 
+import skillBadge from '../../assets/icons/skill-intermediate.svg';
+import timeBadge from '../../assets/icons/time-3month.svg';
+import budgetBadge from '../../assets/icons/budget-5k.svg';
+
 import { Link } from 'react-router'
 
 class Project extends Component {
@@ -38,19 +42,25 @@ class Project extends Component {
     return (
       <div className="project">
         <section className="c-steps u-padding-sides-lg">
-            <h1>{project.name}</h1>
-            <p>{project.description}</p>
+            <h1 className="c-project-title">{project.name}</h1>
+            <p  className="c-project-subtitle">{project.description}</p>
             <div className="c-attribute">
-                <div>
-                    <div className="c-attribute__item"></div>
+                <div className="c-attribute__wrapper">
+                    <div className="c-attribute__item">
+                      <img src={skillBadge} alt="Skill"></img>
+                    </div>
                     <span>Skill Level</span>
                 </div>
-                <div>
-                    <div className="c-attribute__item"></div>
+                <div className="c-attribute__wrapper">
+                    <div className="c-attribute__item">
+                      <img src={timeBadge} alt="Estimated Time"></img>
+                    </div>
                     <span>Time</span>
                 </div>
-                <div>
-                    <div className="c-attribute__item"></div>
+                <div className="c-attribute__wrapper">
+                    <div className="c-attribute__item">
+                      <img src={budgetBadge} alt="Budget"></img>
+                    </div>
                     <span>Budget</span>
                 </div>
             </div>
@@ -132,7 +142,6 @@ class Project extends Component {
         </section>
         <section className="c-steps u-padding-sides-lg u-margin-bottom-xxxlg">
             <h2>4. Project Complete!</h2>
-            <button className="c-button c--primary c--full-width">I&#39;M DONE</button>
             <h5>Actual Time to Complete</h5>
               <div className="u-display-flex u--space-between">
                 <label>1 &gt; Day</label><label>Weekend</label><label>Week</label><label>Month</label><label>3 Month</label><label>Year</label>
@@ -152,6 +161,7 @@ class Project extends Component {
               </span>
               </div>
          </section>
+         <button className="c-button c--primary c--full-width">I&#39;M DONE</button>
       </div>
     );
   }

@@ -71,7 +71,7 @@ class ProjectSetup extends Component {
       }
       // Initialize timeline entry
       const timelineEntry = {
-        timestamp: new Date(),
+        timestamp: Date.now(),
         content: 'Project started. Way to go!',
         media: []
       }

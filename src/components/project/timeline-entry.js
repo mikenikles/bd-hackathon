@@ -18,7 +18,6 @@ const TimelineEntry = ({
           })
         }
       </p>
-      <p><strong>Tags:</strong> {tags.join(', ')}</p>
     </div>
   )
 }
