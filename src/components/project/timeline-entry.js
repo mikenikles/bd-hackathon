@@ -12,8 +12,8 @@ const TimelineEntry = ({
         {timestamp}<br />
         {content}
         {
-          media && media.map((entry) => {
-            return <img src={entry.src} />
+          media && media.map((entry, idx) => {
+            return <img key={idx} src={entry.src} />
           })
         }
       </p>
