@@ -56,6 +56,14 @@ class ProjectList extends Component {
         <h1>Project Timeline Dashboard</h1>
 
         <h2>Add New Project</h2>
+
+        <span>Add a new project to track your:</span>
+        <ul className="c-list c--bullets">
+            <li>Research &amp; Ideation</li>
+            <li>Project Decisions</li>
+            <li> Progess Timeline</li>
+            <li>Project Completion</li>
+        </ul>
         <form onSubmit={this.onAddData}>
           <input placeholder="Name" onChange={this.onNewProjectNameChange} value={this.state.newProjectName} />
           <input placeholder="Description" onChange={this.onNewProjectDescription} value={this.state.newProjectDescription} />
@@ -66,7 +74,7 @@ class ProjectList extends Component {
         {
           this.state.projects.map((project, idx) => {
             return <li key={idx}>
-                <article className="c-project-tile u-margin-bottom-xlg">
+                <article className="c-project-tile u-margin-bottom-xxlg">
                     <Link to={ "/project?id=" + idx}>
                     <div className="delete-later u-margin-bottom-lg"></div>
                     <span className="c-project-tile__title">{project.name}</span>
