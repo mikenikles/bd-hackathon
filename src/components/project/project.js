@@ -34,9 +34,7 @@ class Project extends Component {
 
     return (
       <div className="project">
-        <section className="c-steps">
-            <Link to="/">Home</Link>
-
+        <section className="c-steps u-padding-sides-lg">
             <h1>{project.name}</h1>
             <Link to={`/projects/${this.props.params.id}/add-timeline-entry`}>Log Work</Link>
 
@@ -56,7 +54,7 @@ class Project extends Component {
                 </div>
             </div>
         </section>
-        <section className="c-steps">
+        <section className="c-steps u-padding-all-lg">
             <h2>1. Research &amp; Ideation</h2>
             <p>paragraph text</p>
             <div className="c-block">
@@ -69,7 +67,7 @@ class Project extends Component {
             <p>A bunch of notes</p>
             <hr></hr>
         </section>
-        <section className="c-steps">
+        <section className="c-steps u-padding-all-lg">
             <h2>Decisions</h2>
             <p>paragraph text</p>
             <h4>What I need</h4>

@@ -43,3 +43,26 @@
     width: 100%;
     border-radius: $border-radius;
 }
+
+.c-button.c--add {
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    display: inline-flex;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px -1px $font-color;
+
+    svg {
+        height: 50px;
+        width: 50px;
+        fill: $brand-blue;
+        margin: 0 auto;
+    }
+
+    &:active,
+    &:focus {
+        svg {
+            fill: $dark-blue;
+        }
+    }
+}

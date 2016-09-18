@@ -141,6 +141,33 @@
     padding: $unit*5;
 }
 
+// Sides
+
+.u-padding-sides-sm {
+    padding-right: $unit;
+    padding-left: $unit;
+}
+
+.u-padding-sides-md {
+    padding-right: $v-space;
+    padding-left: $v-space;
+}
+
+.u-padding-sides-lg {
+    padding-right: $unit*3;
+    padding-left: $unit*3;
+}
+
+.u-padding-sides-xlg {
+    padding-right: $v-space*2;
+    padding-left: $v-space*2;
+}
+
+.u-padding-sides-xxlg {
+    padding-right: $unit*5;
+    padding-left: $unit*5;
+}
+
 // Top
 .u-padding-top-sm {
     padding-top: $unit;

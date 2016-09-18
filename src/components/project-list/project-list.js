@@ -23,7 +23,7 @@ class ProjectList extends Component {
 
   render() {
     return (
-      <div className="ProjectList">
+      <div className="ProjectList u-padding-sides-lg">
         <h1>Project Timeline Dashboard</h1>
         <h2>Your Projects</h2>
         <ul>
