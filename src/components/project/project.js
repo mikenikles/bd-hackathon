@@ -161,7 +161,9 @@ class Project extends Component {
               </span>
               </div>
          </section>
-         <button className="c-button c--primary c--full-width">I&#39;M DONE</button>
+         <div className="u-padding-sides-lg">
+             <button className="c-button c--primary c--full-width">I&#39;M DONE</button>
+         </div>
       </div>
     );
   }
