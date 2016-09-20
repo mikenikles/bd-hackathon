@@ -35,7 +35,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('PROJECTS', this.state.projects)
     return (
       <div className="App">
         <div className="u-display-flex u--space-between c-header">

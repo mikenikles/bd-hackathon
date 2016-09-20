@@ -32,7 +32,6 @@ class Search extends React.Component {
   }
 
   saveProduct(product) {
-    console.log(product)
     const projects = this.state.projects
     const project = projects[this.props.params.id]
     if (!project.products) {
@@ -111,7 +110,7 @@ class Search extends React.Component {
                             <p>${product.price} / {product.priceUnit}</p>
                         </div>
                     </div>
-                    <button className={product.added} className="c-button c--primary c--full-width" onClick={this.saveProduct.bind(this, product)}>Add to List</button>
+                    <button className={`${product.added} c-button c--primary c--full-width`} onClick={this.saveProduct.bind(this, product)}>Add to List</button>
                   </li>
                 })
               }

@@ -1,6 +1,5 @@
 import React from 'react'
 import getRebase from '../../utils/rebase'
-import moment from 'moment'
 import AddAudioEntry from './add-audio-entry'
 import AddPictureEntry from './add-picture-entry'
 import AddQuestionEntry from './add-question-entry'
@@ -119,7 +118,7 @@ class AddTimelineEntry extends React.Component {
         <div className="timeline-entry-type u-display-flex u--space-between u--align-center">
           <a className="audio" onClick={() => this.setState({ timelineEntryType: 'audio' })}><img src={audio} alt="Audio" className="c-icon c--large"></img></a>
           <a className="video" onClick={() => this.setState({ timelineEntryType: 'video' })}><img src={video} alt="Video" className="c-icon c--large"></img></a>
-          <a className="camera" onClick={() => this.setState({ timelineEntryType: 'image' })}><img src={camera} alt="Image" className="c-icon c--large"></img></a>
+          <a className="camera" onClick={() => this.setState({ timelineEntryType: 'image' })}><img src={camera} alt="Camera" className="c-icon c--large"></img></a>
           <a className="question" onClick={() => this.setState({ timelineEntryType: 'question' })}><img src={question} alt="Question" className="c-icon c--large"></img></a>
         </div>
         <div className="c-steps u-padding-all-lg">
