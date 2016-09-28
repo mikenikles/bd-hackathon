@@ -79,14 +79,25 @@ class ProjectSetup extends Component {
 
       // Process before image (aka first timeline entry)
       const beforePicture = this.state.newBeforePicture
-      const storageRef = getRebase().storage().ref()
-      const pictureRef = storageRef.child(`projects/${projects.length}/${beforePicture.name}`)
-      pictureRef.put(beforePicture).then((snapshot) => {
-        console.log('Uploaded the before picture.', snapshot)
-        timelineEntry.media.push({
-          type: 'image',
-          src: snapshot.a.downloadURLs[0]
+      if (beforePicture) {
+        const storageRef = getRebase().storage().ref()
+        const pictureRef = storageRef.child(`projects/${projects.length}/${beforePicture.name}`)
+        pictureRef.put(beforePicture).then((snapshot) => {
+          console.log('Uploaded the before picture.', snapshot)
+          timelineEntry.media.push({
+            type: 'image',
+            src: snapshot.a.downloadURLs[0]
+          })
+          newProject.timeline.push(timelineEntry)
+
+          projects.push(newProject)
+
+          this.setState({
+            projects: projects
+          })
+          this.props.history.push('/projects/' + (projects.length - 1))
         })
+      } else {
         newProject.timeline.push(timelineEntry)
 
         projects.push(newProject)
@@ -95,7 +106,7 @@ class ProjectSetup extends Component {
           projects: projects
         })
         this.props.history.push('/projects/' + (projects.length - 1))
-      })
+      }
     }
 
   render() {
